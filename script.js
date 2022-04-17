@@ -1,32 +1,27 @@
 const API_URL = "https://fakestoreapi.com/products"
-let products = [] // creates object to store all products
-let numberOfProducts = products.length;
 
 const main = async () => {
+    let products = [];
+
     const data = await fetch(API_URL);
     const res = await data.json();
     products = res;
+
+    let numberOfProducts = products.length;
+
     console.log(products);
+
+    for(i = 0; i < numberOfProducts; i++){
+        let para = document.createElement("p");
+        let prodTitle = products[i].title;
+
+        let placeholder = document.querySelector(".placeholder");
+        placeholder.appendChild(para);
+
+        para.textContent = prodTitle;
+        console.log(prodTitle);
+    }
 };
 
-main(); // calls data from fake store api
+main();
 
-console.log(products [0]);
-
-for(i = 0; i <= numberOfProducts; i++){
-    const placeholder = document.querySelector(".placeholder");
-
-    let prodContainer = document.createElement("div");
-    let prodText = document.createElement("div");
-    let prodTitleHTML = document.createElement("h2");
-    let prodTitle = products[i].title;
-    let prodDescriptionHTML = document.createElement("p");
-    let prodDescription = products[i].description;
-    let prodPriceHTML = document.createElement("p");
-    let prodPrice = products[i].price;
-
-    
-    document.body.insertBefore(prodContainer, placeholder);
-    prodContainer.appendChild(prodText);
-    prodText.appendChild(prodTitleHTML, prodDescriptionHTML, prodPriceHTML);
-}
