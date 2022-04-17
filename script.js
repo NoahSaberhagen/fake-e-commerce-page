@@ -9,17 +9,15 @@ const main = async () => {
 
     let numberOfProducts = products.length;
 
-    console.log(products);
-
     for(i = 0; i < numberOfProducts; i++){
-        let para = document.createElement("p");
+        let cardTitle = document.createElement("p");
         let prodTitle = products[i].title;
 
         let placeholder = document.querySelector(".placeholder");
-        placeholder.appendChild(para);
+        placeholder.appendChild(cardTitle);
 
-        para.textContent = prodTitle;
-        console.log(prodTitle);
+        cardTitle.textContent = prodTitle;
+        cardTitle.setAttribute("class", "card-title");
     }
 };
 
