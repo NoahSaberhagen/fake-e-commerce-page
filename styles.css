@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(232, 177, 110);
+}
 .card-title{
     color: red;
 }
@@ -11,16 +14,24 @@
 }
 
 .card-image {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
 
-.product-container {
+.card-text {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 600px;
+}
+
+.product-card {
     background-color: white;
     border-radius: 10px;
     display: flex;
     height: 250px;
+    margin: 10px;
     padding: 10px;
-    width: 500px;
+    width: 800px;
 }
 
