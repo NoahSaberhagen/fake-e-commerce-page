@@ -2,8 +2,17 @@
     color: red;
 }
 
-.card-title2{
+.card-description{
     color: blue;
+}
+
+.card-price {
+    color: green;
+}
+
+.card-image {
+    height: 100px;
+    width: 100px;
 }
 
 .product-container {
