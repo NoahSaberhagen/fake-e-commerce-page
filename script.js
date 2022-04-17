@@ -1,28 +1,28 @@
 const API_URL = "https://fakestoreapi.com/products"
 
 const main = async () => {
-    let products = [];
-
     const data = await fetch(API_URL);
     const res = await data.json();
-    products = res;
+    let products = []; 
+    products = res; // 1.0 stores all products fetched from the API
 
     let numberOfProducts = products.length;
 
-    for(i = 0; i < numberOfProducts; i++){
-        let cardImage = document.createElement("img");
+    for(i = 0; i < numberOfProducts; i++){ // 2.0 displays product card for products[i], written in HTML order.
+
+        let cardImage = document.createElement("img"); // 2.1 sets var for HTML and retrieves API data
         let prodImage = products[i].image;
 
-        let cardTitle = document.createElement("h3");
-        let prodTitle = products[i].title;
+        let cardTitle = document.createElement("h3"); 
+        let prodTitle = products[i].title; 
 
-        let cardDescription = document.createElement("p");
+        let cardDescription = document.createElement("p"); 
         let prodDescription = products[i].description;
 
         let cardPrice = document.createElement("p");
-        let prodPrice = products[i].price;
+        let prodPrice = products[i].price; 
 
-        cardImage.setAttribute("src", prodImage);
+        cardImage.setAttribute("src", prodImage); // 2.2
         cardTitle.textContent = prodTitle;
         cardDescription.textContent = prodDescription;
         cardPrice.textContent = prodPrice;
