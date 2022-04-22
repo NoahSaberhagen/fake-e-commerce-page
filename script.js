@@ -1,4 +1,4 @@
-const API_URL = "https://fakestoreapi.com/products"
+const API_URL = "https://fakestoreapi.com/products" // 
 
 const main = async () => {
     const data = await fetch(API_URL);

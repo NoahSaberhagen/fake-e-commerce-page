@@ -6,12 +6,17 @@ body {
 }
 
 header {
-    color: white;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0,0,0,0.5);
+    color: black;
+    margin: 10px;
+    padding: 10px;
 }
 
 a:visited {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .card-title{
@@ -41,6 +46,7 @@ a:visited {
 .product-card {
     background-color: white;
     border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0,0,0,0.5);
     display: flex;
     height: 250px;
     margin: 10px;
