@@ -1,14 +1,22 @@
-const API_URL = "https://fakestoreapi.com/products" // 
+//global variables
+const API_URL = "https://fakestoreapi.com/products";
 
-const main = async () => {
+let merchandise = [];
+let numberOfMerchandise = merchandise.length;
+
+//functions
+const loadFakeStoreAPI = async () => {
     const data = await fetch(API_URL);
-    const res = await data.json();
-    let products = []; 
-    products = res; // stores all products fetched from the API
+    const response = await data.json();
+    for(let i = 0; i < response.length; i++){
+        merchandise.push(response[i]);
+    }
+    console.log(response);
+};
+loadFakeStoreAPI();
 
-    let numberOfProducts = products.length;
-
-    for(i = 0; i < numberOfProducts; i++){ // displays product card for products[i]
+const generateHTMLMerchandiseCards = () => {
+    for(i = 0; i < numberOfMerchandise; i++){ // displays product card for products[i]
 
         let card = document.createElement("div"); // creates card wrappers HTML
         let cardText = document.createElement("div");
@@ -45,8 +53,18 @@ const main = async () => {
         cardText.appendChild(cardTitle);
         cardText.appendChild(cardDescription);
         cardText.appendChild(cardPrice);
-    }
+    };
 };
 
-main();
+// const main = async () => {
+//     const data = await fetch(API_URL);
+//     const res = await data.json();
+//     merchandise.push(res); // stores all products fetched from the API
+//     //console.log(merchandise);
+//     generateHTMLMerchandiseCards();   
+// };
+
+
+
+
 
